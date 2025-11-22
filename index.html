@@ -1,45 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Husan Mirzabayev</title>
-    <link rel="stylesheet" href="styles.css">
-    <meta name="description" content="Personal page of Husan Mirzabayev - student and IT enthusiast.">
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
-</head>
-<body>
-    <main class="container">
-        <h1>Husan Mirzabayev</h1>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Husan Mirzabayev — Portfolio</title>
+        <meta name="description" content="Husan Mirzabayev — student, web enthusiast. Demo of advanced HTML & CSS.">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="site-header" role="banner">
+            <div class="wrap">
+                <h1 class="logo">Husan Mirzabayev</h1>
+                <div class="controls">
+                    <label class="theme-toggle" aria-label="Toggle theme">
+                        <input id="theme" type="checkbox" aria-hidden="true">
+                        <span class="slider" aria-hidden="true"></span>
+                    </label>
+                </div>
+            </div>
+        </header>
 
-        <p><strong>I'm just an ordinary boy</strong> who wants to learn everything about IT.</p>
+        <main class="site-main wrap">
+            <section class="hero" aria-labelledby="intro-title">
+                <div class="hero-card">
+                    <div class="avatar" aria-hidden="true">
+                        <svg viewBox="0 0 120 120" class="avatar-svg" role="img" aria-label="avatar placeholder">
+                            <defs>
+                                <linearGradient id="g" x1="0" x2="1">
+                                    <stop offset="0" stop-color="#2563eb"/>
+                                    <stop offset="1" stop-color="#6ee7b7"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="120" height="120" rx="20" fill="url(#g)"></rect>
+                        </svg>
+                    </div>
+                    <div class="hero-content">
+                        <h2 id="intro-title">I'm just an ordinary boy</h2>
+                        <p class="lead">who wants to learn everything about IT. I like writing semantic HTML and pushing CSS to do creative UI without heavy JS.</p>
+                        <div class="meta">
+                            <span class="badge">IUT • Student</span>
+                            <span class="badge">Frontend curious</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <h2>My Current Classes at IUT</h2>
-        <ul>
-            <li>OOP</li>
-            <li>AER</li>
-            <li>AE</li>
-            <li>Intro to IT</li>
-        </ul>
+            <section class="grid" aria-labelledby="classes-title">
+                <h3 id="classes-title">Current Classes</h3>
+                <ul class="cards">
+                    <li class="card">OOP</li>
+                    <li class="card">AER</li>
+                    <li class="card">AE</li>
+                    <li class="card">Intro to IT</li>
+                </ul>
+            </section>
 
-        <h2>My Favorite Movies</h2>
-        <ol>
-            <li><a href="https://www.imdb.com/title/tt1037163/" target="_blank" rel="noopener noreferrer">1+1 (The Intouchables)</a></li>
-            <li><a href="https://www.imdb.com/title/tt1670345/" target="_blank" rel="noopener noreferrer">Now You See Me</a></li>
-            <li><a href="https://www.imdb.com/title/tt0264464/" target="_blank" rel="noopener noreferrer">Catch Me If You Can</a></li>
-        </ol>
+            <section class="grid" aria-labelledby="movies-title">
+                <h3 id="movies-title">Favorite Movies</h3>
+                <ol class="movies">
+                    <li><a href="https://www.imdb.com/title/tt1037163/" target="_blank" rel="noopener">1+1 (The Intouchables)</a></li>
+                    <li><a href="https://www.imdb.com/title/tt1670345/" target="_blank" rel="noopener">Now You See Me</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0264464/" target="_blank" rel="noopener">Catch Me If You Can</a></li>
+                </ol>
+            </section>
 
-        <h2>Me as a Meme</h2>
-        <p>Happy me:</p>
-        <img src="https://i.imgflip.com/30zz5g.jpg" alt="happy meme" class="meme">
+            <section class="grid" aria-labelledby="memes-title">
+                <h3 id="memes-title">Me as a Meme</h3>
+                <figure class="meme-figure">
+                    <figcaption>Happy me</figcaption>
+                    <img src="https://i.imgflip.com/30zz5g.jpg" alt="happy meme">
+                </figure>
+                <figure class="meme-figure">
+                    <figcaption>Sad me</figcaption>
+                    <img src="https://i.imgflip.com/1ur9b0.jpg" alt="sad meme">
+                </figure>
+            </section>
 
-        <p>Sad me:</p>
-        <img src="https://i.imgflip.com/1ur9b0.jpg" alt="sad meme" class="meme">
+            <section class="grid" aria-labelledby="contact-title">
+                <h3 id="contact-title">Contact & Links</h3>
+                <p>Akbar is the real nerd who gets around 90% on all mids.</p>
+                <p class="muted">GitHub Page: <a href="https://TERMINATOOOOOOOr.github.io" target="_blank" rel="noopener">TERMINATOOOOOOOr.github.io</a></p>
+            </section>
+        </main>
 
-        <h2>Fun Fact About My Neighbor</h2>
-        <p>Akbar is the real nerd who gets around 90% on all mids.</p>
+        <footer class="site-footer" role="contentinfo">
+            <div class="wrap">
+                <small>© <span id="year"></span> Husan Mirzabayev · Built with semantic HTML & advanced CSS</small>
+            </div>
+        </footer>
 
-        <p class="muted">My GitHub Page: <a href="https://TERMINATOOOOOOOr.github.io" target="_blank" rel="noopener noreferrer">https://TERMINATOOOOOOOr.github.io</a></p>
-    </main>
-</body>
+        <script>
+            // theme toggle with persistence
+            (function(){
+                const checkbox = document.getElementById('theme');
+                const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const current = localStorage.getItem('theme') || (prefersDark? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', current);
+                checkbox.checked = current === 'dark';
+                checkbox.addEventListener('change', ()=>{
+                    const t = checkbox.checked ? 'dark' : 'light';
+                    document.documentElement.setAttribute('data-theme', t);
+                    localStorage.setItem('theme', t);
+                });
+                document.getElementById('year').textContent = new Date().getFullYear();
+            })();
+        </script>
+    </body>
 </html>
