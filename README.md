@@ -1,1 +1,0 @@
-# TERMINATOOOOOOOr.github.io
