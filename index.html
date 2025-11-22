@@ -1,193 +1,109 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Husan Mirzabayev — Portfolio / Homework</title>
-  <meta name="description" content="Husan Mirzabayev — personal homepage & IT homework showcase" />
-  <!-- Basic favicon -->
-  <link rel="icon" href="data:,">
-  <style>
-    /* =========================
-       Variables & Reset
-       ========================= */
-    :root{
-      --bg: #0f1724;
-      --card: #0b1220;
-      --muted: #9aa4b2;
-      --accent: #00b4d8;
-      --accent-2: #7b61ff;
-      --glass: rgba(255,255,255,0.04);
-      --glass-2: rgba(255,255,255,0.02);
-      --radius: 14px;
-      --page-padding: 28px;
-    }
-    [data-theme="light"]{
-      --bg: #f6f8fb;
-      --card: #ffffff;
-      --muted: #556076;
-      --accent: #0066cc;
-      --accent-2: #6f4cff;
-      --glass: rgba(0,0,0,0.03);
-      --glass-2: rgba(0,0,0,0.02);
-    }
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Husan Mirzabayev — Portfolio</title>
+        <meta name="description" content="Husan Mirzabayev — student, web enthusiast. Demo of advanced HTML & CSS.">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="site-header" role="banner">
+            <div class="wrap">
+                <h1 class="logo">Husan Mirzabayev</h1>
+                <div class="controls">
+                    <label class="theme-toggle" aria-label="Toggle theme">
+                        <input id="theme" type="checkbox" aria-hidden="true">
+                        <span class="slider" aria-hidden="true"></span>
+                    </label>
+                </div>
+            </div>
+        </header>
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-      background: linear-gradient(180deg, var(--bg), rgba(0,0,0,0));
-      color: #e6eef6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding: var(--page-padding);
-      transition: background 260ms ease, color 260ms ease;
-    }
-    a{color:var(--accent); text-decoration:none}
-    a:hover{text-decoration:underline}
+        <main class="site-main wrap">
+            <section class="hero" aria-labelledby="intro-title">
+                <div class="hero-card">
+                    <div class="avatar" aria-hidden="true">
+                        <svg viewBox="0 0 120 120" class="avatar-svg" role="img" aria-label="avatar placeholder">
+                            <defs>
+                                <linearGradient id="g" x1="0" x2="1">
+                                    <stop offset="0" stop-color="#2563eb"/>
+                                    <stop offset="1" stop-color="#6ee7b7"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="120" height="120" rx="20" fill="url(#g)"></rect>
+                        </svg>
+                    </div>
+                    <div class="hero-content">
+                        <h2 id="intro-title">I'm just an ordinary boy</h2>
+                        <p class="lead">who wants to learn everything about IT. I like writing semantic HTML and pushing CSS to do creative UI without heavy JS.</p>
+                        <div class="meta">
+                            <span class="badge">IUT • Student</span>
+                            <span class="badge">Frontend curious</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    /* =========================
-       Top nav
-       ========================= */
-    .nav{
-      position:fixed;
-      left:var(--page-padding);
-      right:var(--page-padding);
-      top:18px;
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      align-items:center;
-      z-index:40;
-    }
-    .brand{
-      display:flex;gap:12px;align-items:center;
-      background:var(--glass);
-      padding:8px 12px;border-radius:12px;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 6px 18px rgba(2,6,23,0.6);
-    }
-    .logo{
-      width:44px;height:44px;border-radius:10px;
-      background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      display:flex;align-items:center;justify-content:center;font-weight:700;
-      color:white;font-size:18px;
-    }
-    nav .links{display:flex; gap:10px; align-items:center}
-    .btn {
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));
-      padding:8px 12px;border-radius:10px;color:#001;
-      font-weight:700;border:none;cursor:pointer;
-      box-shadow: 0 6px 14px rgba(11,20,40,0.6);
-    }
-    .ghost {
-      background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 10px;border-radius:10px;color:var(--muted);
-      cursor:pointer;
-    }
+            <section class="grid" aria-labelledby="classes-title">
+                <h3 id="classes-title">Current Classes</h3>
+                <ul class="cards">
+                    <li class="card">OOP</li>
+                    <li class="card">AER</li>
+                    <li class="card">AE</li>
+                    <li class="card">Intro to IT</li>
+                </ul>
+            </section>
 
-    /* =========================
-       Hero
-       ========================= */
-    .container{max-width:1100px;margin:120px auto 60px; padding:20px}
-    .hero{
-      display:grid; grid-template-columns:1fr 360px; gap:28px; align-items:center;
-    }
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      padding:22px;border-radius:var(--radius); box-shadow: 0 8px 30px rgba(2,6,23,0.6);
-      border:1px solid var(--glass-2);
-    }
-    h1{margin:0 0 10px;font-size:32px;letter-spacing:-0.6px}
-    .tagline{color:var(--muted); margin-bottom:12px}
-    .typewriter{
-      display:inline-block;
-      font-weight:700;color:var(--accent-2);
-    }
+            <section class="grid" aria-labelledby="movies-title">
+                <h3 id="movies-title">Favorite Movies</h3>
+                <ol class="movies">
+                    <li><a href="https://www.imdb.com/title/tt1037163/" target="_blank" rel="noopener">1+1 (The Intouchables)</a></li>
+                    <li><a href="https://www.imdb.com/title/tt1670345/" target="_blank" rel="noopener">Now You See Me</a></li>
+                    <li><a href="https://www.imdb.com/title/tt0264464/" target="_blank" rel="noopener">Catch Me If You Can</a></li>
+                </ol>
+            </section>
 
-    /* tech badges */
-    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-    .badge{background:var(--glass);color:var(--muted);padding:8px 10px;border-radius:9px;font-weight:600}
+            <section class="grid" aria-labelledby="memes-title">
+                <h3 id="memes-title">Me as a Meme</h3>
+                <figure class="meme-figure">
+                    <figcaption>Happy me</figcaption>
+                    <img src="https://i.imgflip.com/30zz5g.jpg" alt="happy meme">
+                </figure>
+                <figure class="meme-figure">
+                    <figcaption>Sad me</figcaption>
+                    <img src="https://i.imgflip.com/1ur9b0.jpg" alt="sad meme">
+                </figure>
+            </section>
 
-    /* right column */
-    .profile{
-      text-align:center;
-      display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;height:100%;
-    }
-    .avatar{
-      width:160px;height:160px;border-radius:20px;
-      background:linear-gradient(135deg,var(--accent-2),var(--accent));
-      display:flex;align-items:center;justify-content:center;font-size:36px;color:white;font-weight:800;
-      box-shadow: 0 8px 20px rgba(11,20,40,0.6);
-    }
-    .meta{color:var(--muted)}
+            <section class="grid" aria-labelledby="contact-title">
+                <h3 id="contact-title">Contact & Links</h3>
+                <p>Akbar is the real nerd who gets around 90% on all mids.</p>
+                <p class="muted">GitHub Page: <a href="https://TERMINATOOOOOOOr.github.io" target="_blank" rel="noopener">TERMINATOOOOOOOr.github.io</a></p>
+            </section>
+        </main>
 
-    /* =========================
-       Grid sections
-       ========================= */
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:20px}
-    .full{grid-column:1/-1}
+        <footer class="site-footer" role="contentinfo">
+            <div class="wrap">
+                <small>© <span id="year"></span> Husan Mirzabayev · Built with semantic HTML & advanced CSS</small>
+            </div>
+        </footer>
 
-    ul.clean{padding-left:18px;margin:10px 0}
-    ol.clean{padding-left:18px;margin:10px 0}
-
-    /* gallery */
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .thumb{border-radius:12px;overflow:hidden; cursor:pointer; position:relative;}
-    .thumb img{width:100%;height:160px;object-fit:cover;display:block;transition:transform .25s ease}
-    .thumb:hover img{transform:scale(1.05)}
-    .caption{position:absolute;left:8px;bottom:8px;background:linear-gradient(90deg, rgba(0,0,0,0.6), rgba(0,0,0,0.2));padding:6px 8px;border-radius:8px;color:#fff;font-weight:700;font-size:13px}
-
-    /* modal */
-    .modal{
-      position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.8);z-index:60;padding:24px;
-    }
-    .modal.open{display:flex}
-    .modal img{max-width:95%;max-height:85%;border-radius:12px;box-shadow:0 18px 60px rgba(0,0,0,0.6)}
-
-    /* responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr}
-      .gallery{grid-template-columns:repeat(2,1fr)}
-      .grid{grid-template-columns:1fr}
-      .profile{order:-1}
-    }
-    @media (max-width:520px){
-      .gallery{grid-template-columns:1fr}
-    }
-
-    footer{margin:60px auto 20px;color:var(--muted);text-align:center;font-size:13px}
-    .small{font-size:13px;color:var(--muted)}
-    /* subtle entrance */
-    .reveal{opacity:0;transform:translateY(12px);transition:all .6s cubic-bezier(.2,.9,.3,1)}
-    .reveal.show{opacity:1;transform:none}
-  </style>
-</head>
-<body>
-  <!-- NAV -->
-  <div class="nav">
-    <div class="brand" title="Husan Mirzabayev">
-      <div class="logo">HM</div>
-      <div>
-        <div style="font-weight:800">Husan Mirzabayev</div>
-        <div style="font-size:12px;color:var(--muted)">IUT — Student</div>
-      </div>
-    </div>
-
-    <div style="display:flex;gap:10px;align-items:center">
-      <div class="links small" style="display:flex;gap:10px">
-        <a href="#about">About</a>
-        <a href="#classes">Classes</a>
-        <a href="#movies">Movies</a>
-        <a href="#memes">Memes</a>
-        <a href="#hw">HW6</a>
-      </div>
-      <button id="themeToggle" class="ghost" title="Toggle dark / light">Toggle theme</button>
-      <a class="btn" href="#hw">View HW6</a>
-    </div>
-  </div>
-
-  <!-- PAGE -->
-  <main class="container" role="main">
-    <section class="hero reveal" id="about">
-      <
+        <script>
+            // theme toggle with persistence
+            (function(){
+                const checkbox = document.getElementById('theme');
+                const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const current = localStorage.getItem('theme') || (prefersDark? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', current);
+                checkbox.checked = current === 'dark';
+                checkbox.addEventListener('change', ()=>{
+                    const t = checkbox.checked ? 'dark' : 'light';
+                    document.documentElement.setAttribute('data-theme', t);
+                    localStorage.setItem('theme', t);
+                });
+                document.getElementById('year').textContent = new Date().getFullYear();
+            })();
+        </script>
+    </body>
+</html>
