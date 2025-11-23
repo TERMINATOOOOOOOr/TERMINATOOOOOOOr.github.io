@@ -1,143 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Husan Mirzabayev — Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Husan Mirzabayev — Homepage</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
   <!-- HEADER -->
-  <header class="site-header">
-    <div class="wrap">
-      <h1 class="logo">Husan<span style="opacity:.8">.Dev</span></h1>
+  <header class="header">
+    <div class="container header-inner">
+      <h1 class="logo">Husan<span>Mirzabayev</span></h1>
 
-      <div class="controls">
-        <label class="theme-toggle">
-          <input type="checkbox" id="themeSwitch">
-          <span class="slider"></span>
-        </label>
-      </div>
+      <label class="theme-switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider"></span>
+      </label>
     </div>
   </header>
 
-  <main class="site-main">
+  <main>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div class="wrap">
-        <div class="hero-card">
+    <!-- HERO -->
+    <section class="hero container">
+      <div class="hero-card">
+        <div class="avatar">HM</div>
 
-          <div class="avatar">
-            <img src="https://avatars.githubusercontent.com/u/0?v=4" alt="avatar" class="avatar-svg">
+        <div class="hero-content">
+          <h2>Hello, I'm Husan 👋</h2>
+          <p class="lead">
+            I'm just an ordinary boy who wants to learn everything about IT.<br>
+            I study at IUT and enjoy programming, networks and web development.
+          </p>
+
+          <div class="badges">
+            <span class="badge">HTML</span>
+            <span class="badge">CSS</span>
+            <span class="badge">Wireshark</span>
+            <span class="badge">IUT Student</span>
           </div>
-
-          <div class="hero-content">
-            <h2>Hello, I'm Husan 👋</h2>
-            <p class="lead">
-              I'm just an ordinary boy who wants to learn everything about IT.
-              I love programming, networks, and building modern web pages.
-            </p>
-
-            <div class="meta">
-              <span class="badge">HTML</span>
-              <span class="badge">CSS</span>
-              <span class="badge">Wireshark</span>
-              <span class="badge">IUT Student</span>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
 
     <!-- CLASSES -->
-    <section class="grid">
-      <div class="wrap">
-        <h3>My Classes at IUT</h3>
-        <ul class="cards">
-          <li class="card">OOP</li>
-          <li class="card">AER</li>
-          <li class="card">AE</li>
-          <li class="card">Intro to IT</li>
-        </ul>
-      </div>
+    <section class="container section">
+      <h3 class="section-title">My Classes at IUT</h3>
+
+      <ul class="card-grid">
+        <li class="card-item">OOP</li>
+        <li class="card-item">AER</li>
+        <li class="card-item">AE</li>
+        <li class="card-item">Intro to IT</li>
+      </ul>
     </section>
 
     <!-- MOVIES -->
-    <section class="grid">
-      <div class="wrap">
-        <h3>My Favorite Movies</h3>
-        <ol class="movies">
-          <li><a href="https://www.imdb.com/title/tt1037163/" target="_blank">1+1 (The Intouchables)</a></li>
-          <li><a href="https://www.imdb.com/title/tt1670345/" target="_blank">Now You See Me</a></li>
-          <li><a href="https://www.imdb.com/title/tt0264464/" target="_blank">Catch Me If You Can</a></li>
-        </ol>
-      </div>
+    <section class="container section">
+      <h3 class="section-title">Favorite Movies</h3>
+
+      <ol class="movie-list">
+        <li><a href="https://www.imdb.com/title/tt1037163/" target="_blank">1+1 (The Intouchables)</a></li>
+        <li><a href="https://www.imdb.com/title/tt1670345/" target="_blank">Now You See Me</a></li>
+        <li><a href="https://www.imdb.com/title/tt0264464/" target="_blank">Catch Me If You Can</a></li>
+      </ol>
     </section>
 
     <!-- MEMES -->
-    <section class="grid">
-      <div class="wrap">
-        <h3>Me as a Meme 😅</h3>
+    <section class="container section">
+      <h3 class="section-title">Me as a Meme 😅</h3>
 
-        <figure class="meme-figure">
+      <div class="memes">
+        <figure class="meme">
           <figcaption>Happy me:</figcaption>
           <img src="https://i.imgflip.com/30zz5g.jpg" alt="happy meme">
         </figure>
 
-        <figure class="meme-figure">
+        <figure class="meme">
           <figcaption>Sad me:</figcaption>
           <img src="https://i.imgflip.com/1ur9b0.jpg" alt="sad meme">
         </figure>
-
       </div>
     </section>
 
-    <!-- HW6 -->
-    <section class="grid">
-      <div class="wrap">
-        <h3>Homework 6 — Wireshark</h3>
+    <!-- HW -->
+    <section class="container section">
+      <h3 class="section-title">Homework 6 — Wireshark</h3>
 
-        <p class="muted">You can view your HW6 PDF using the buttons below.</p>
+      <p>You can view your uploaded HW6 PDF here:</p>
 
-        <p>
-          <a class="badge" href="/mnt/data/hw6.pdf" target="_blank">Open HW6 PDF</a>
-        </p>
-      </div>
+      <a class="btn" href="/mnt/data/hw6.pdf" target="_blank">Open HW6 PDF</a>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <small>Built by Husan · IUT · 2025</small>
+  <footer class="footer">
+    <p>Built by Husan • IUT • 2025</p>
   </footer>
 
+  <script>
+    // Theme toggle
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
 
-<script>
-  // THEME SWITCHER
-  const switcher = document.getElementById("themeSwitch");
-  const root = document.documentElement;
-
-  if (localStorage.getItem("theme") === "light") {
-    root.setAttribute("data-theme", "light");
-    switcher.checked = true;
-  }
-
-  switcher.addEventListener("change", () => {
-    if (switcher.checked) {
-      root.setAttribute("data-theme", "light");
-      localStorage.setItem("theme", "light");
-    } else {
-      root.removeAttribute("data-theme");
-      localStorage.setItem("theme", "dark");
+    if (localStorage.getItem("theme") === "light") {
+      root.dataset.theme = "light";
+      toggle.checked = true;
     }
-  });
-</script>
+
+    toggle.addEventListener("change", () => {
+      if (toggle.checked) {
+        root.dataset.theme = "light";
+        localStorage.setItem("theme", "light");
+      } else {
+        root.removeAttribute("data-theme");
+        localStorage.setItem("theme", "dark");
+      }
+    });
+  </script>
 
 </body>
 </html>
-
