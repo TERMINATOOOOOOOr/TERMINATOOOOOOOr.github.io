@@ -1,109 +1,318 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Husan Mirzabayev — Portfolio</title>
-        <meta name="description" content="Husan Mirzabayev — student, web enthusiast. Demo of advanced HTML & CSS.">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header class="site-header" role="banner">
-            <div class="wrap">
-                <h1 class="logo">Husan Mirzabayev</h1>
-                <div class="controls">
-                    <label class="theme-toggle" aria-label="Toggle theme">
-                        <input id="theme" type="checkbox" aria-hidden="true">
-                        <span class="slider" aria-hidden="true"></span>
-                    </label>
-                </div>
-            </div>
-        </header>
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --muted: #9aa4b2;
+  --accent: #00b4d8;
+  --accent-2: #7b61ff;
+  --radius: 14px;
+  --text: #e6eef6;
+  --text-muted: #9aa4b2;
+}
+[data-theme="light"] {
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --muted: #556076;
+  --accent: #0066cc;
+  --accent-2: #6f4cff;
+  --text: #1a1a1a;
+  --text-muted: #556076;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.site-header {
+  background: var(--card);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+[data-theme="light"] .site-header {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.site-header .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.controls {
+  display: flex;
+  align-items: center;
+}
+.theme-toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  cursor: pointer;
+}
+.theme-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--muted);
+  transition: 0.3s;
+  border-radius: 26px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+.theme-toggle input:checked + .slider {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+}
+.theme-toggle input:checked + .slider:before {
+  transform: translateX(24px);
+}
+.site-main {
+  padding: 3rem 0;
+}
+.hero {
+  margin-bottom: 4rem;
+}
+.hero-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+.avatar {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.avatar-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.hero-content {
+  flex: 1;
+}
+.hero-content h2 {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  color: var(--text);
+}
+.lead {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.7;
+}
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.grid {
+  margin-bottom: 3rem;
+}
+.grid h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  color: var(--text);
+}
+.cards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.cards .card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin: 0;
+}
+[data-theme="light"] .cards .card {
+  border-color: rgba(0, 0, 0, 0.05);
+}
+.cards .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.movies {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  list-style: decimal;
+  list-style-position: inside;
+  margin: 0;
+}
+.movies li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.movies li:last-child {
+  border-bottom: none;
+}
+[data-theme="light"] .movies li {
+  border-bottom-color: rgba(0, 0, 0, 0.05);
+}
+.movies a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.movies a:hover {
+  color: var(--accent-2);
+  text-decoration: underline;
+}
+.meme-figure {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+.meme-figure:last-child {
+  margin-bottom: 0;
+}
+.meme-figure figcaption {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+.meme-figure img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.grid p {
+  color: var(--text);
+  margin: 0 0 1rem 0;
+  line-height: 1.7;
+}
+.grid p.muted {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+.grid a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.grid a:hover {
+  color: var(--accent-2);
+  text-decoration: underline;
+}
+.site-footer {
+  background: var(--card);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem 0;
+  margin-top: 4rem;
+  text-align: center;
+}
+[data-theme="light"] .site-footer {
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+.site-footer small {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+h1, h2, h3 {
+  color: var(--text);
+}
+@media (max-width: 768px) {
+  .wrap {
+    padding: 0 1rem;
+  }
 
-        <main class="site-main wrap">
-            <section class="hero" aria-labelledby="intro-title">
-                <div class="hero-card">
-                    <div class="avatar" aria-hidden="true">
-                        <svg viewBox="0 0 120 120" class="avatar-svg" role="img" aria-label="avatar placeholder">
-                            <defs>
-                                <linearGradient id="g" x1="0" x2="1">
-                                    <stop offset="0" stop-color="#2563eb"/>
-                                    <stop offset="1" stop-color="#6ee7b7"/>
-                                </linearGradient>
-                            </defs>
-                            <rect width="120" height="120" rx="20" fill="url(#g)"></rect>
-                        </svg>
-                    </div>
-                    <div class="hero-content">
-                        <h2 id="intro-title">I'm just an ordinary boy</h2>
-                        <p class="lead">who wants to learn everything about IT. I like writing semantic HTML and pushing CSS to do creative UI without heavy JS.</p>
-                        <div class="meta">
-                            <span class="badge">IUT • Student</span>
-                            <span class="badge">Frontend curious</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+  .hero-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
 
-            <section class="grid" aria-labelledby="classes-title">
-                <h3 id="classes-title">Current Classes</h3>
-                <ul class="cards">
-                    <li class="card">OOP</li>
-                    <li class="card">AER</li>
-                    <li class="card">AE</li>
-                    <li class="card">Intro to IT</li>
-                </ul>
-            </section>
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
 
-            <section class="grid" aria-labelledby="movies-title">
-                <h3 id="movies-title">Favorite Movies</h3>
-                <ol class="movies">
-                    <li><a href="https://www.imdb.com/title/tt1037163/" target="_blank" rel="noopener">1+1 (The Intouchables)</a></li>
-                    <li><a href="https://www.imdb.com/title/tt1670345/" target="_blank" rel="noopener">Now You See Me</a></li>
-                    <li><a href="https://www.imdb.com/title/tt0264464/" target="_blank" rel="noopener">Catch Me If You Can</a></li>
-                </ol>
-            </section>
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
 
-            <section class="grid" aria-labelledby="memes-title">
-                <h3 id="memes-title">Me as a Meme</h3>
-                <figure class="meme-figure">
-                    <figcaption>Happy me</figcaption>
-                    <img src="https://i.imgflip.com/30zz5g.jpg" alt="happy meme">
-                </figure>
-                <figure class="meme-figure">
-                    <figcaption>Sad me</figcaption>
-                    <img src="https://i.imgflip.com/1ur9b0.jpg" alt="sad meme">
-                </figure>
-            </section>
+  .cards {
+    grid-template-columns: 1fr;
+  }
 
-            <section class="grid" aria-labelledby="contact-title">
-                <h3 id="contact-title">Contact & Links</h3>
-                <p>Akbar is the real nerd who gets around 90% on all mids.</p>
-                <p class="muted">GitHub Page: <a href="https://TERMINATOOOOOOOr.github.io" target="_blank" rel="noopener">TERMINATOOOOOOOr.github.io</a></p>
-            </section>
-        </main>
-
-        <footer class="site-footer" role="contentinfo">
-            <div class="wrap">
-                <small>© <span id="year"></span> Husan Mirzabayev · Built with semantic HTML & advanced CSS</small>
-            </div>
-        </footer>
-
-        <script>
-            // theme toggle with persistence
-            (function(){
-                const checkbox = document.getElementById('theme');
-                const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                const current = localStorage.getItem('theme') || (prefersDark? 'dark' : 'light');
-                document.documentElement.setAttribute('data-theme', current);
-                checkbox.checked = current === 'dark';
-                checkbox.addEventListener('change', ()=>{
-                    const t = checkbox.checked ? 'dark' : 'light';
-                    document.documentElement.setAttribute('data-theme', t);
-                    localStorage.setItem('theme', t);
-                });
-                document.getElementById('year').textContent = new Date().getFullYear();
-            })();
-        </script>
-    </body>
-</html>
+  .site-main {
+    padding: 2rem 0;
+  }
+}
